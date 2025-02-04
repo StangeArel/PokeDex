@@ -1,0 +1,59 @@
+:root {
+    --BC-dark-blue: rgb(3, 3, 126);
+    --BC-light-blue: rgb(3, 79, 126);
+    --BC-blue: rgb(0, 0, 255);
+    --BC-electric: rgb(247, 208, 44);
+
+}
+
+body {
+    margin: 0;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+.header, .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--BC-dark-blue);
+    color: var(--BC-electric);
+    height: 120px;
+    position: relative;
+    background: linear-gradient(to bottom, rgb(10, 10, 180), var(--BC-dark-blue));
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+.footer {
+    background: linear-gradient(to top, rgb(10, 10, 180), var(--BC-dark-blue));
+    box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.7);
+}
+
+.pokedexTitleHeaderFooter {
+    font-family: 'PokemonFont';
+    font-size: clamp(3rem, 6vw, 5rem);
+    /* Mindestens 2rem, maximal 5rem */
+    margin: 0;
+    color: var(--BC-electric);
+    font-weight: 800;
+    text-shadow: -3px -3px 0 var(--BC-blue),
+        3px -3px 0 var(--BC-blue),
+        -3px 3px 0 var(--BC-blue),
+        3px 3px 0 var(--BC-blue),
+        0px 5px 10px rgba(0, 0, 0, 0.9);
+}
+
+.main {
+    flex: 1;
+    background: linear-gradient(to bottom, var(--BC-light-blue), var(--BC-dark-blue));
+}
+
+.footer {
+    background-color: var(--BC-dark-blue);
+    height: 120px;
+}

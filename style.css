@@ -70,3 +70,16 @@ body {
     transform: scale(1.03);
 }
 
+/* Main-Bereich */
+
+.pokemonList {
+    list-style: none;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 75rem;
+    margin: 0 auto;
+    gap: 2rem;
+    background-color: brown;
+}
+

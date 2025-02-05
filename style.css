@@ -4,11 +4,11 @@
     --BC-blue: rgb(0, 0, 255);
     --BC-electric: rgb(247, 208, 44);
     --BC-white: rgb(255, 255, 255);
-
 }
 
 body {
     margin: 0;
+    cursor: url('./assets/Favicon/pokeballMin.png') 16 16, auto;
 }
 
 .cursor {
@@ -109,19 +109,38 @@ body {
     flex-wrap: wrap;
 }
 
+.cardsInside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
 .pokemonCard {
     position: relative;
     width: clamp(300px, 10vw, 350px);
     height: clamp(300px, 10vh, 350px);
     border-radius: 50px;
-    backdrop-filter: blur(100px);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+}
+
+.pokemonCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+    background-color: #7AC74C;
+}
+
+.pokemonCard:hover .pokemonImg {
+    transform: scale(1.2);
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
 
 .pokemonCard:hover {
@@ -131,23 +150,27 @@ body {
 }
 
 .pokemonImg {
+    object-fit: contain;
     width: clamp(120px, 20vw, 180px);
     max-height: 180px;
-    object-fit: contain;
-    filter: blur(5px) drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .pokemonImg:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
 }
 
 .pokemonCardHeader h2 {
     font-family: 'PokemonFont', sans-serif;
-    font-size: 1.5rem;
+    font-weight: 900;
+    font-size: 1.8rem;
     color: var(--BC-white);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
     margin: 15px 0;
     text-align: center;
 }

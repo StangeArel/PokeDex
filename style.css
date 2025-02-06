@@ -210,7 +210,6 @@ body {
     margin: 15px 0;
     text-align: center;
 
-    background: rgb(237, 8, 225); /* Ändern! */
     transform: rotateY(180deg);
 }
 

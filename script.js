@@ -1,5 +1,5 @@
 const pokeApiUrl = "https://pokeapi.co/api/v2/pokemon";
-const pokeApiLimit = 5;
+const pokeApiLimit = 4;
 const pokeApiOffset = 0;
 const pokemonList = document.getElementById("main");
 let pokemonDataList = []; 
@@ -28,7 +28,8 @@ async function fetchPokemonsDetails(pokemonList) {
         pokemonDataList.push({
             name: onePokemonDetailsJson.name,
             id: onePokemonDetailsJson.id,
-            imgUrl: onePokemonDetailsJson.sprites.other.home.front_shiny
+            imgUrl: onePokemonDetailsJson.sprites.other.home.front_shiny,
+            gifUrl: onePokemonDetailsJson.sprites.versions["generation-v"]["black-white"].animated.front_default
         });
     }
 }
@@ -44,16 +45,20 @@ function renderPokemonList() {
 }
 
 function generateTemplatesForRenderPokemons(onePokemon) {
+    const formattedName = onePokemon.name.charAt(0).toUpperCase() + onePokemon.name.slice(1);
     return `
-                <div class="pokemonCard">
-                    <div class="cardsInside cardInnere">
-                        <div class="pokemonCardHeader">
-                            <h2>#${onePokemon.id}</h2>
-                            <h2>${onePokemon.name}</h2>
+                <div class="pokemonCard flipped">
+                    <div class="cardsInside">
+                        <div class="cardFront">
+                            <div class="pokemonCardHeader">
+                                <h2>#${onePokemon.id}</h2>
+                                <h2>${formattedName}</h2>
+                            </div>
+                            <img class="pokemonImg" src="${onePokemon.imgUrl}" alt="img. Pokemon">
                         </div>
-                        <img class="pokemonImg" src="${onePokemon.imgUrl}" alt="img. Pokemon">
-                        <div class="pokemonTypes">
-                            <img src="" alt="">
+                        <div class="cardBack">
+                            <h2>${formattedName}</h2>
+                            <img class="pokemonGif" src="${onePokemon.gifUrl}" alt="gif. Pokemon">
                         </div>
                     </div>
                 </div>

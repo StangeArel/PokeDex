@@ -12,7 +12,7 @@ body {
 }
 
 .cursor {
-    position: absolute;
+    position: fixed;
     width: 10px;
     height: 10px;
     background-color: var(--BC-electric);
@@ -20,6 +20,7 @@ body {
     pointer-events: none;
     box-shadow: 0 0 10px var(--BC-electric), 0 0 20px var(--BC-blue);
     animation: fadeOut 0.5s linear forwards;
+    transition: transform 0.08s linear;
 }
 
 @keyframes fadeOut {
@@ -116,7 +117,9 @@ body {
     justify-content: center;
     width: 100%;
     height: 100%;
-    transition: transform 0.3s ease-in-out;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
 }
 
 .pokemonCard {
@@ -130,6 +133,7 @@ body {
     justify-content: space-between;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 1000px;
 }
 
 .pokemonCard:hover {
@@ -143,12 +147,6 @@ body {
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
 
-.pokemonCard:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
-    background-color: #7AC74C;
-}
-
 .pokemonImg {
     object-fit: contain;
     width: clamp(120px, 20vw, 180px);
@@ -156,13 +154,15 @@ body {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.pokemonGif {
+    object-fit: contain;
+    width: clamp(50px, 20vw, 80px);
+    max-height: 80px;
+}
+
 .pokemonImg:hover {
     transform: scale(1.5);
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
 }
 
 .pokemonCardHeader h2 {
@@ -175,4 +175,46 @@ body {
     text-align: center;
 }
 
+/* Karten umdrehen (oben angepasst) */
+.cardInner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.4s;
+}
 
+.pokemonCard.flipped .cardInner {
+    transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 50px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.cardBack {
+    font-family: 'PokemonFont', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--BC-white);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
+    margin: 15px 0;
+    text-align: center;
+
+    background: var(--BC-electric);
+    transform: rotateY(180deg);
+}
+
+.pokemonCard:hover .cardsInside {
+    transform: rotateY(180deg);
+}

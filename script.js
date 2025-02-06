@@ -2,7 +2,28 @@ const pokeApiUrl = "https://pokeapi.co/api/v2/pokemon";
 const pokeApiLimit = 4;
 const pokeApiOffset = 0;
 const pokemonList = document.getElementById("main");
-let pokemonDataList = []; 
+let pokemonDataList = [];
+
+const colours = {
+	normal: '#A8A77A',
+	fire: '#EE8130',
+	water: '#6390F0',
+	electric: '#F7D02C',
+	grass: '#7AC74C',
+	ice: '#96D9D6',
+	fighting: '#C22E28',
+	poison: '#A33EA1',
+	ground: '#E2BF65',
+	flying: '#A98FF3',
+	psychic: '#F95587',
+	bug: '#A6B91A',
+	rock: '#B6A136',
+	ghost: '#735797',
+	dragon: '#6F35FC',
+	dark: '#705746',
+	steel: '#B7B7CE',
+	fairy: '#D685AD',
+};
 
 async function fetchPokemonsList() {
     const response = await fetch(
@@ -29,7 +50,7 @@ async function fetchPokemonsDetails(pokemonList) {
             name: onePokemonDetailsJson.name,
             id: onePokemonDetailsJson.id,
             imgUrl: onePokemonDetailsJson.sprites.other.home.front_shiny,
-            gifUrl: onePokemonDetailsJson.sprites.versions["generation-v"]["black-white"].animated.front_default
+            gifUrl: onePokemonDetailsJson.sprites.versions["generation-v"]["black-white"].animated.front_default,
         });
     }
 }
@@ -57,8 +78,9 @@ function generateTemplatesForRenderPokemons(onePokemon) {
                             <img class="pokemonImg" src="${onePokemon.imgUrl}" alt="img. Pokemon">
                         </div>
                         <div class="cardBack">
-                            <h2>${formattedName}</h2>
                             <img class="pokemonGif" src="${onePokemon.gifUrl}" alt="gif. Pokemon">
+                            <h2>${formattedName}</h2>
+                            <div class="pokemonTypes">Hallo Du</div>
                         </div>
                     </div>
                 </div>

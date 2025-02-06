@@ -139,7 +139,6 @@ body {
 .pokemonCard:hover {
     transform: scale(1.05);
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
-    background-color: #7AC74C;
 }
 
 .pokemonCard:hover .pokemonImg {
@@ -211,7 +210,7 @@ body {
     margin: 15px 0;
     text-align: center;
 
-    background: var(--BC-electric);
+    background: rgb(237, 8, 225); /* Ändern! */
     transform: rotateY(180deg);
 }
 

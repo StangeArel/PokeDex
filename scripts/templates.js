@@ -15,6 +15,7 @@ function generateTemplatesForRenderPokemons(onePokemon) {
                             <img class="pokemonGif" src="${onePokemon.gifUrl}" alt="gif. Pokemon">
                             <h2>${formattedName}</h2>
                             <div class="pokemonTypes">Hallo Du</div>
+                            <button class="btnCheckAbilities" style="background:${color} !important">Check Abilities</button>
                         </div>
                     </div>
                 </div>

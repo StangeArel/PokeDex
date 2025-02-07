@@ -216,3 +216,53 @@ body {
 .pokemonCard:hover .cardsInside {
     transform: rotateY(180deg);
 }
+
+/* Button Check */
+
+.btnCheckAbilities {
+    position: relative;
+    padding: 15px 20%;
+    margin-top: 15px;
+    border: none;
+    outline: none;
+    color: var(--BC-blue);
+    cursor: pointer;
+    position: relative;
+    z-index: 2 important;
+    border-radius: 50px;
+}
+
+.btnCheckAbilities::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    background-color: transparent !important;
+}
+
+.btnCheckAbilities::before {
+    content: "";
+    background: linear-gradient(45deg, #FF0000, #FF7300, #FFFB00, #48FF00, #00FFD5, #002BFF, #FF00C8, #FF0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 10s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}

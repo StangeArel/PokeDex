@@ -1,5 +1,6 @@
 // PokemonList:
 async function fetchPokemonsList() {
+    toggleLoadingSpinner();
     const response = await fetch(
         pokeApiUrl + `?limit=${pokeApiLimit}&offset=${pokeApiOffset}`
     );
@@ -11,6 +12,7 @@ async function fetchPokemonsList() {
     await fetchPokemonsDetails(data);
 /*     await fetchTypesList(); */
     renderPokemonList();
+    toggleLoadingSpinner();
 }
 
 async function fetchPokemonsDetails(pokemonList) {

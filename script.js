@@ -46,3 +46,8 @@ function loadMore() {
     pokeApiOffset += pokeApiLimit;
     fetchPokemonsList();
 }
+
+function toggleLoadingSpinner() {
+    let overlay = document.getElementById("loadingOverlay");
+    overlay.classList.toggle("d_none");
+}

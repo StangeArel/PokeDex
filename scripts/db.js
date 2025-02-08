@@ -1,11 +1,13 @@
 const pokeApiUrl = "https://pokeapi.co/api/v2/pokemon";
-const pokeApiLimit = 16;
-const pokeApiOffset = 0;
+let pokeApiLimit = 30;
+let pokeApiOffset = 0;
 const pokemonList = document.getElementById("main");
 let pokemonDataList = [];
-const pokeApiTypesUrl = "https://pokeapi.co/api/v2/type";
-let typesData = []; 
 let currentIndex;
+
+/* const pokeApiTypesUrl = "https://pokeapi.co/api/v2/type";
+let typesData = [];  */
+
 
 const colours = {
     normal: 'rgba(168, 167, 122, 0.6)',
@@ -27,3 +29,4 @@ const colours = {
     steel: 'rgba(183, 183, 206, 0.6)',
     fairy: 'rgba(214, 133, 173, 0.6)',
 };
+

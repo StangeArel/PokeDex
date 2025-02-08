@@ -41,3 +41,7 @@ function previousBtnInOverlay() {
     }
     renderOverlay(currentIndex);
 }
+
+function loadMore() {
+    
+}

@@ -14,7 +14,7 @@ function generateTemplatesForRenderPokemons(i, onePokemon) {
                         <div class="cardBack" style="background:${color}">
                             <img class="pokemonGif" src="${onePokemon.gifUrl}" alt="gif. Pokemon">
                             <h2>${formattedName}</h2>
-                            <div class="pokemonTypes">Hallo Du</div>
+                            <div class="pokemonTypes" id="pokemonTypes">${generateTemplatesTypes(onePokemon)}</div>
                             <button onclick="toggleAbilityOverlay(${i})" class="btnCheckAbilities" style="background:${color} !important">Check Abilities</button>
                         </div>
                     </div>
@@ -28,6 +28,7 @@ function generateTemplatesForOverlay(i) {
 
     const formattedName = onePokemon.name.charAt(0).toUpperCase() + onePokemon.name.slice(1);
     return `<div class="overlayCard" style="background:${color} !important" onclick="stopPropation(event)">
+                <img class="pokemonImgOverlayCard" src="${onePokemon.imgUrl}" alt="img. Pokemon">
                 <div class="overlayHeader">
                     <h1>${formattedName}</h1>
                 </div>
@@ -40,4 +41,13 @@ function generateTemplatesForOverlay(i) {
                 </div>
             </div>
         `
+}
+
+function generateTemplatesTypes(onePokemon) {
+    let template = ``;
+    for (let index = 0; index < onePokemon.types.length; index++) {
+        const typeName = onePokemon.types[index].type.name;
+        template += `<img class="typeImg" src="../assets/img/typeImgs/${typeName}.svg">`;
+    }
+    return template;
 }

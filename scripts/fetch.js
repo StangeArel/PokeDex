@@ -9,7 +9,7 @@ async function fetchPokemonsList() {
     const responseJson = await response.json();
     const data = responseJson.results;
     await fetchPokemonsDetails(data);
-    await fetchTypesList();
+/*     await fetchTypesList(); */
     renderPokemonList();
 }
 
@@ -32,7 +32,7 @@ async function fetchPokemonsDetails(pokemonList) {
 }
 
 // Typs:
-async function fetchTypesList() {
+/* async function fetchTypesList() {
     const response = await fetch(pokeApiTypesUrl);
     if (!response.ok) {
         return console.error("api error");
@@ -56,3 +56,4 @@ async function fetchTypesDetails(typesList) {
         });
     }
 }
+ */

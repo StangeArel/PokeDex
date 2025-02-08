@@ -2,3 +2,8 @@
     font-family: 'PokemonFont'; 
     src: url('../assets/fonts/pokemon-hollow-font/PokemonHollowNormal-pyPZ.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Pokemon Solid'; 
+    src: url('../assets/fonts/PokemonSolid.ttf') format('truetype');
+}

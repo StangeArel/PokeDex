@@ -12,7 +12,7 @@
     <title>PokéDex</title>
 </head>
 
-<body onload="fetchPokemonsList()">
+<body onload="fetchPokemonsList()" onclick="hideSearchInput()">
 
     <div class="contentContainer">
         <div class="header">
@@ -20,6 +20,14 @@
         </div>
 
         <div class="main">
+            <div class="containerForSearch" onclick="stopPropation(event)">
+                <input oninput="searchPokemoninList()" type="search" class="pokemonSearch hidden" id="pokemonSearch" name="q"
+                    placeholder="Pokémon suchen..." />
+                <button class="btnPokemonSearchBtn" onclick="toggleSearch(event)">
+                    <img class="pokemonSearchBtn" src="./assets/img/searchForPokemon.png" alt="Img. Pokemon search">
+                </button>
+            </div>
+
             <div class="pokemonList" id="pokemonList"></div>
             <button class="btnCheckAbilities loadMoreBtn" onclick="loadMore()">Load more</button>
         </div>
@@ -30,15 +38,15 @@
     </div>
 
     <div id="abilityOverlay" class="overlay d_none" onclick="toggleAbilityOverlay()"></div>
-    <div id="loadingOverlay" class="overlay d_none"><img class="loadingOverlayImg" src="./assets/img/pokeballLoading.png" alt="img. PokeBall Loading"></div>
-
-
+    <div id="loadingOverlay" class="overlay d_none"><img class="loadingOverlayImg"
+            src="./assets/img/pokeballLoading.png" alt="img. PokeBall Loading"></div>
 
     <script src="./script.js"></script>
     <script src="./scripts/cursor.js"></script>
     <script src="./scripts/templates.js"></script>
     <script src="./scripts/db.js"></script>
     <script src="./scripts/fetch.js"></script>
+    <script src="./scripts/search.js"></script>
 
 </body>
 

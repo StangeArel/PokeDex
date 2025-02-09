@@ -83,7 +83,7 @@ body {
 .header:hover,
 .footer:hover {
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 1),
-        0px -20px 40px rgba(0, 0, 0, 1);
+    0px -20px 40px rgba(0, 0, 0, 1);
     transform: scale(1.03);
 }
 
@@ -262,7 +262,7 @@ body {
     height: 100%;
     left: 0;
     top: 0;
-    border-radius: 12px;
+    border-radius: 15px;
     background-color: transparent !important;
 }
 
@@ -392,4 +392,52 @@ body {
     width: 25rem;
     max-width: 60%;
     animation: rotation 2s linear infinite;
+}
+
+.containerForSearch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center; 
+    width: 20px;
+    margin: 4%;
+}
+
+.pokemonSearch {
+    width: 15px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    font-family: 'Pokemon Solid'; 
+    font-size: 22px;
+}
+
+.pokemonSearch.active {
+    width: 18rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.btnPokemonSearchBtn {
+    width: 4rem; 
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.pokemonSearchBtn {
+    width: 6rem; 
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+@media (max-width: 644px){
+    .containerForSearch {
+        flex-direction: column-reverse;
+    }
 }

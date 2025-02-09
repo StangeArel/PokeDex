@@ -4,6 +4,7 @@ let pokeApiOffset = 0;
 const pokemonList = document.getElementById("main");
 let pokemonDataList = [];
 let currentIndex;
+let currentPokemonDataList = [];
 
 /* const pokeApiTypesUrl = "https://pokeapi.co/api/v2/type";
 let typesData = [];  */

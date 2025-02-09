@@ -1,8 +1,8 @@
 function renderPokemonList() {
     let pokemonListRef = document.getElementById("pokemonList");
     pokemonListRef.innerHTML = "";
-    for (let i = 0; i < pokemonDataList.length; i++) {
-        const onePokemon = pokemonDataList[i];
+    for (let i = 0; i < currentPokemonDataList.length; i++) {
+        const onePokemon = currentPokemonDataList[i];
         let template = generateTemplatesForRenderPokemons(i, onePokemon);
         pokemonListRef.innerHTML += template;
     }
@@ -28,7 +28,7 @@ function stopPropation(event) {
 
 function nextBtnInOverlay() {
     currentIndex++;
-    if (currentIndex >= pokemonDataList.length){
+    if (currentIndex >= currentPokemonDataList.length){
         currentIndex = 0;
     }
     renderOverlay(currentIndex);
@@ -37,7 +37,7 @@ function nextBtnInOverlay() {
 function previousBtnInOverlay() {
     currentIndex--;
     if (currentIndex < 0){
-        currentIndex = pokemonDataList.length-1;
+        currentIndex = currentPokemonDataList.length-1;
     }
     renderOverlay(currentIndex);
 }

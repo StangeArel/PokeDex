@@ -31,6 +31,7 @@ async function fetchPokemonsDetails(pokemonList) {
             types: onePokemonDetailsJson.types
         });
     }
+    currentPokemonDataList = pokemonDataList;
 }
 
 // Typs:

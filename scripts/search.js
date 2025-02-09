@@ -27,7 +27,8 @@ function hideSearchInput() {
 function searchPokemoninList() {
     let searchInput = document.getElementById("pokemonSearch"); 
     let searchInputValue = searchInput.value.toLowerCase().trim();
-    let searchResult = pokemonDataList.filter(function(onePokemon){
+    currentPokemonDataList = pokemonDataList.filter(function(onePokemon){
         return onePokemon.name.includes(searchInputValue);
     });
+    renderPokemonList();
 }

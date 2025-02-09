@@ -23,7 +23,7 @@ function generateTemplatesForRenderPokemons(i, onePokemon) {
 }
 
 function generateTemplatesForOverlay(i) {
-    let onePokemon = pokemonDataList[i];
+    let onePokemon = currentPokemonDataList[i];
     let color = colours[onePokemon.types[0].type.name];
 
     const formattedName = onePokemon.name.charAt(0).toUpperCase() + onePokemon.name.slice(1);

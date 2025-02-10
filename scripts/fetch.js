@@ -28,7 +28,8 @@ async function fetchPokemonsDetails(pokemonList) {
             id: onePokemonDetailsJson.id,
             imgUrl: onePokemonDetailsJson.sprites.other.home.front_shiny,
             gifUrl: onePokemonDetailsJson.sprites.versions['generation-v']['black-white'].animated.front_default,
-            types: onePokemonDetailsJson.types
+            types: onePokemonDetailsJson.types,
+            stats: onePokemonDetailsJson.stats
         });
     }
     currentPokemonDataList = pokemonDataList;

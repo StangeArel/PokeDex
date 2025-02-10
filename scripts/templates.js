@@ -33,7 +33,14 @@ function generateTemplatesForOverlay(i) {
                     <h1>${formattedName}</h1>
                 </div>
                 <div class="overlayMain">
-                <p>Hallo</p>
+                    <div class="overlayMainContainerNavBtns">
+                        <button class="overlayMainNavBtn" onclick="toggleCardContent(1, ${i})">Evo-Chain</button>
+                        <button class="overlayMainNavBtn" onclick="toggleCardContent(2, ${i})">Stats</button>
+                        <button class="overlayMainNavBtn" onclick="toggleCardContent(3, ${i})">Neu Information</button>
+                    </div>
+                    <div id="cardContent" class="cardContent">
+
+                    </div>
                 </div>
                 <div class="overlayFooter">
                     <button onclick="previousBtnInOverlay()" id="previous"></button>
@@ -50,4 +57,26 @@ function generateTemplatesTypes(onePokemon) {
         template += `<img class="typeImg" src="../assets/img/typeImgs/${typeName}.svg">`;
     }
     return template;
+}
+
+function generateTemplatesEvoChain() {
+    return `
+    1
+    `
+}
+
+function generateTemplatesStats(i) {
+    let template =`
+    <div class="containerCanvasStats">
+        <canvas id="myChart" width="450" height="300" ></canvas>
+    </div>
+    `;
+
+    return template;
+}
+
+function generateTemplatesDRITE() {
+    return `
+    3
+    `
 }

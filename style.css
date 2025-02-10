@@ -244,7 +244,7 @@ body {
 .loadMoreBtn {
     box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.3);
     background: linear-gradient(217deg, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0) 70.71%);
-    margin: 4%;
+    margin: 2rem;
     padding: 30px 60px;
     border-radius: 50px;
 }
@@ -397,10 +397,14 @@ body {
 .containerForSearch {
     display: flex;
     align-items: center;
-    gap: 10px;
     justify-content: center; 
     width: 20px;
-    margin: 4%;
+    margin: 2rem;
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+    background-color: transparent;
+    padding: 20px;
 }
 
 .pokemonSearch {

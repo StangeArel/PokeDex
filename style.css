@@ -84,7 +84,7 @@ body {
 .header:hover,
 .footer:hover {
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 1),
-    0px -20px 40px rgba(0, 0, 0, 1);
+        0px -20px 40px rgba(0, 0, 0, 1);
     transform: scale(1.03);
 }
 
@@ -398,7 +398,7 @@ body {
 .containerForSearch {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     width: 20px;
     margin: 2rem;
     position: sticky;
@@ -415,7 +415,7 @@ body {
     border: none;
     border-radius: 15px;
     transition: width 0.3s ease, opacity 0.3s ease;
-    font-family: 'Pokemon Solid'; 
+    font-family: 'Pokemon Solid';
     font-size: 22px;
 }
 
@@ -428,26 +428,26 @@ body {
 }
 
 .btnPokemonSearchBtn {
-    width: 4rem; 
+    width: 4rem;
     cursor: pointer;
     border: none;
     background-color: transparent;
 }
 
 .pokemonSearchBtn {
-    width: 6rem; 
+    width: 6rem;
     cursor: pointer;
     border: none;
     background-color: transparent;
 }
 
-@media (max-width: 644px){
+@media (max-width: 644px) {
     .containerForSearch {
         flex-direction: column-reverse;
     }
 
     .containerCanvasStats {
-        max-height: 260px; 
+        max-height: 260px;
         max-width: 320px;
     }
 
@@ -455,7 +455,38 @@ body {
         padding: 0 !important;
         margin: 10px 0 0 0 !important;
     }
+
+    table {
+        width: 90%;
+        margin: 0;
+        padding: 0;
+        min-height: 100px; /* Stellt sicher, dass die Höhe stabil bleibt */
+    }
+
+    td {
+        padding: 0;
+        font-size: 1em;
+        margin: 0;
+        height: 25px; /* Definierte Zeilenhöhe für Konsistenz */
+    }
+
+    td:first-child {
+        margin: 0;
+        padding: 0;
+    }
+
+    td:last-child {
+        margin: 0;
+        padding: 0;
+    }
+    
+    tr:last-child td {
+        margin: 0;
+        padding: 0;
+    }
 }
+
+
 
 /* Canvas - Stats */
 .overlayMainContainerNavBtns {
@@ -490,9 +521,11 @@ body {
 
 #chartContainer {
     width: 100%;
-    max-width: 550px; /* Etwas größer für mehr Platz */
+    max-width: 550px;
+    /* Etwas größer für mehr Platz */
     height: auto;
-    min-height: 350px; /* Minimum Höhe für mehr Flexibilität */
+    min-height: 350px;
+    /* Minimum Höhe für mehr Flexibilität */
     margin: auto;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -515,4 +548,32 @@ body {
     position: relative;
     height: 100%;
     width: 85%;
+}
+
+
+table {
+    width: 70%;
+    max-width: 400px;
+    overflow: hidden;
+    min-height: 100px; /* Mindesthöhe, damit sich nichts verkleinert */
+}
+
+td {
+    padding: 12px;
+    font-size: 20px;
+}
+
+td:first-child {
+    font-weight: bold;
+    color: var(--BC-white);
+    width: 40%;
+}
+
+td:last-child {
+    text-align: center;
+    color: var(--BC-white);
+}
+
+tr:last-child td {
+    border-bottom: none;
 }

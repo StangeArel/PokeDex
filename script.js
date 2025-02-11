@@ -20,7 +20,7 @@ function toggleAbilityOverlay(i) {
 function renderOverlay(i) {
     let overlayRef = document.getElementById("abilityOverlay");
     overlayRef.innerHTML = generateTemplatesForOverlay(i);
-    toggleCardContent(2, i);
+    toggleCardContent(1, i);
 }
 
 function stopPropation(event) {
@@ -57,7 +57,7 @@ function toggleCardContent(buttonId, i) {
     let cardContentRef = document.getElementById("cardContent");
     let templateString = "";
     if (buttonId == 1) {
-        templateString = generateTemplatesEvoChain();
+        templateString = generateTemplatesAbout(i);
         cardContentRef.innerHTML = templateString;
     } else if (buttonId == 2) {
         templateString = generateTemplatesStats(i);

@@ -34,7 +34,7 @@ function generateTemplatesForOverlay(i) {
                 </div>
                 <div class="overlayMain">
                     <div class="overlayMainContainerNavBtns">
-                        <button class="overlayMainNavBtn" onclick="toggleCardContent(1, ${i})">Evo-Chain</button>
+                        <button class="overlayMainNavBtn" onclick="toggleCardContent(1, ${i})">About</button>
                         <button class="overlayMainNavBtn" onclick="toggleCardContent(2, ${i})">Stats</button>
                         <button class="overlayMainNavBtn" onclick="toggleCardContent(3, ${i})">Neu Information</button>
                     </div>
@@ -59,10 +59,21 @@ function generateTemplatesTypes(onePokemon) {
     return template;
 }
 
-function generateTemplatesEvoChain() {
-    return `
-    1
+function generateTemplatesAbout(i) {
+    let onePokemon = currentPokemonDataList[i];
+    let template = ``;
+    for (let i = 0; i < onePokemon.abilities.length; i++) {
+        template += `<p>${onePokemon.abilities[i].ability.name}</p>`
+    }
+    let templateAbout =`
+    <table>
+    <tr><td><b>Height:</b></td><td>${onePokemon.height}cm</td></tr>
+    <tr><td><b>Weight:</b></td><td>${onePokemon.weight}kg</td></tr>
+    <tr><td><b>Abilities:</b></td><td>${template}</td></tr>
+    <tr><td><b>BaseExperience:</b></td><td>${onePokemon.baseExperience}xp</td></tr>
+    </table>
     `
+    return templateAbout;
 }
 
 function generateTemplatesStats(i) {
@@ -77,6 +88,6 @@ function generateTemplatesStats(i) {
 
 function generateTemplatesDRITE() {
     return `
-    3
+    <marquee>3</marquee>
     `
 }

@@ -29,7 +29,12 @@ async function fetchPokemonsDetails(pokemonList) {
             imgUrl: onePokemonDetailsJson.sprites.other.home.front_shiny,
             gifUrl: onePokemonDetailsJson.sprites.versions['generation-v']['black-white'].animated.front_default,
             types: onePokemonDetailsJson.types,
-            stats: onePokemonDetailsJson.stats
+            stats: onePokemonDetailsJson.stats,
+
+            height: onePokemonDetailsJson.height,
+            weight: onePokemonDetailsJson.weight,
+            baseExperience: onePokemonDetailsJson.base_experience,
+            abilities: onePokemonDetailsJson.abilities
         });
     }
     currentPokemonDataList = pokemonDataList;

@@ -445,9 +445,15 @@ body {
     .containerForSearch {
         flex-direction: column-reverse;
     }
+
     .containerCanvasStats {
         max-height: 260px; 
         max-width: 320px;
+    }
+
+    .overlayMainContainerNavBtns {
+        padding: 0 !important;
+        margin: 10px 0 0 0 !important;
     }
 }
 
@@ -456,7 +462,9 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    padding: 30px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
 .overlayMainNavBtn {

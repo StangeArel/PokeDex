@@ -65,7 +65,7 @@ body {
 
 .pokedexTitleHeaderFooter {
     font-family: 'PokemonFont';
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     margin: 0;
     color: var(--BC-electric);
     font-weight: 800;
@@ -87,8 +87,6 @@ body {
         0px -20px 40px rgba(0, 0, 0, 1);
     transform: scale(1.03);
 }
-
-/* Main-Bereich */
 
 .main {
     text-shadow: 0px 0px 10px var(--BC-dark-blue), 0px 0px 20px var(--BC-blue);
@@ -173,11 +171,10 @@ body {
     font-size: 1.8rem;
     color: var(--BC-white);
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
-    margin: 15px 0;
+    margin: 15px 0 0 0;
     text-align: center;
 }
 
-/* Karten umdrehen (oben angepasst) */
 .cardInner {
     width: 100%;
     height: 100%;
@@ -212,7 +209,6 @@ body {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
     margin: 15px 0;
     text-align: center;
-
     transform: rotateY(180deg);
 }
 
@@ -223,8 +219,6 @@ body {
 .pokemonCard:hover .cardsInside {
     transform: rotateY(180deg);
 }
-
-/* Button Check */
 
 .btnCheckAbilities {
     position: relative;
@@ -282,7 +276,6 @@ body {
     transition: opacity 0.3s ease-in-out;
     border-radius: 18px;
     opacity: 1;
-
 }
 
 @keyframes glowing {
@@ -299,10 +292,8 @@ body {
     }
 }
 
-/* Overlay */
 .overlay {
     position: fixed;
-    /*nachschauen!!*/
     top: 0;
     left: 0;
     height: 100vh;
@@ -358,6 +349,7 @@ body {
 
 .overlayMain {
     flex: 1;
+    width: 100%;
 }
 
 #previous {
@@ -460,14 +452,14 @@ body {
         width: 90%;
         margin: 0;
         padding: 0;
-        min-height: 100px; /* Stellt sicher, dass die Höhe stabil bleibt */
+        min-height: 100px;
     }
 
     td {
         padding: 0;
         font-size: 1em;
         margin: 0;
-        height: 25px; /* Definierte Zeilenhöhe für Konsistenz */
+        height: 25px;
     }
 
     td:first-child {
@@ -486,9 +478,6 @@ body {
     }
 }
 
-
-
-/* Canvas - Stats */
 .overlayMainContainerNavBtns {
     display: flex;
     justify-content: center;
@@ -496,9 +485,11 @@ body {
     padding-top: 30px;
     margin-bottom: 30px;
     flex-wrap: wrap;
+    font-family: 'Rubik'; 
 }
 
 .overlayMainNavBtn {
+    font-family: 'Rubik'; 
     background: linear-gradient(145deg, var(--BC-electric), #ff9900);
     color: white;
     font-size: 14.5px;
@@ -512,20 +503,16 @@ body {
 }
 
 .overlayMainNavBtn:hover {
+    font-family: 'Rubik'; 
     background: linear-gradient(145deg, #d2c9a7, #9f7d49);
     color: var(--BC-electric);
-
 }
-
-
 
 #chartContainer {
     width: 100%;
     max-width: 550px;
-    /* Etwas größer für mehr Platz */
     height: auto;
     min-height: 350px;
-    /* Minimum Höhe für mehr Flexibilität */
     margin: auto;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -550,30 +537,34 @@ body {
     width: 85%;
 }
 
-
 table {
+    font-family: 'Rubik'; 
     width: 70%;
     max-width: 400px;
     overflow: hidden;
-    min-height: 100px; /* Mindesthöhe, damit sich nichts verkleinert */
+    min-height: 100px;
 }
 
 td {
+    font-family: 'Rubik'; 
     padding: 12px;
     font-size: 20px;
 }
 
 td:first-child {
+    font-family: 'Rubik'; 
     font-weight: bold;
     color: var(--BC-white);
     width: 40%;
 }
 
 td:last-child {
+    font-family: 'Rubik'; 
     text-align: center;
     color: var(--BC-white);
 }
 
 tr:last-child td {
+    font-family: 'Rubik'; 
     border-bottom: none;
 }

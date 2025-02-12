@@ -1,24 +1,21 @@
-
-let myChartInstance = null; // Variable, um bestehendes Chart-Objekt zu speichern
+let myChartInstance = null;
 
 function showStatsChart(i) {
     const canvas = document.getElementById('myChart');
     const ctx = canvas.getContext('2d');
 
-    // Falls bereits ein Chart existiert, zerstöre ihn
     if (myChartInstance) {
         myChartInstance.destroy();
     }
 
-    // Neues Chart erstellen und in der Variable speichern
     myChartInstance = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: currentPokemonDataList[i].stats.map(stat => stat.stat.name.toUpperCase()), // Labels für Achse
+            labels: currentPokemonDataList[i].stats.map(stat => stat.stat.name.toUpperCase()),
             datasets: [{
                 data: currentPokemonDataList[i].stats.map(stat => stat.base_stat),
                 borderWidth: 2,
-                barThickness: 25, // Dickere Balken für bessere Sichtbarkeit
+                barThickness: 25,
                 maxBarThickness: 45,
                 categoryPercentage: 0.8,  
                 barPercentage: 0.9,  
@@ -38,7 +35,7 @@ function showStatsChart(i) {
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)'
                 ],
-                borderRadius: 10, // Abgerundete Balken für modernes Design
+                borderRadius: 10,
                 hoverBackgroundColor: [
                     'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
@@ -53,9 +50,9 @@ function showStatsChart(i) {
             maintainAspectRatio: false,  
             indexAxis: 'y',
             layout: {
-                padding: 20 // Fügt das Padding um das Chart hinzu
+                padding: 20
             },
-            animation: false,  // 🚀 Deaktiviert alle Animationen
+            animation: false,
             scales: {
                 x: {
                     beginAtZero: true,

@@ -1,4 +1,4 @@
-// PokemonList:
+
 async function fetchPokemonsList() {
     toggleLoadingSpinner();
     const response = await fetch(
@@ -10,7 +10,6 @@ async function fetchPokemonsList() {
     const responseJson = await response.json();
     const data = responseJson.results;
     await fetchPokemonsDetails(data);
-/*     await fetchTypesList(); */
     renderPokemonList();
     toggleLoadingSpinner();
 }
@@ -30,7 +29,6 @@ async function fetchPokemonsDetails(pokemonList) {
             gifUrl: onePokemonDetailsJson.sprites.versions['generation-v']['black-white'].animated.front_default,
             types: onePokemonDetailsJson.types,
             stats: onePokemonDetailsJson.stats,
-
             height: onePokemonDetailsJson.height,
             weight: onePokemonDetailsJson.weight,
             baseExperience: onePokemonDetailsJson.base_experience,
@@ -39,30 +37,3 @@ async function fetchPokemonsDetails(pokemonList) {
     }
     currentPokemonDataList = pokemonDataList;
 }
-
-// Typs:
-/* async function fetchTypesList() {
-    const response = await fetch(pokeApiTypesUrl);
-    if (!response.ok) {
-        return console.error("api error");
-    }
-    const responseJson = await response.json();
-    const data = responseJson.results;
-    await fetchTypesDetails(data);
-}
-
-async function fetchTypesDetails(typesList) {
-    for (let i = 0; i < typesList.length; i++) {
-        let oneTypeUrl = typesList[i].url;
-        let oneTypeDetails = await fetch(oneTypeUrl);
-        if (!oneTypeDetails.ok) {
-            return console.error("api error");
-        }
-        const oneTypeDetailsJson = await oneTypeDetails.json();
-        typesData.push({
-            name: oneTypeDetailsJson.name,
-            imgUrl: oneTypeDetailsJson.sprites['generation-vii']['lets-go-pikachu-lets-go-eevee'].name_icon
-        });
-    }
-}
- */

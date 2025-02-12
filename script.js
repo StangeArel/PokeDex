@@ -63,8 +63,5 @@ function toggleCardContent(buttonId, i) {
         templateString = generateTemplatesStats(i);
         cardContentRef.innerHTML = templateString;
         showStatsChart(i);
-    } else if (buttonId == 3) {
-        templateString = generateTemplatesDRITE();
-        cardContentRef.innerHTML = templateString;
     }
 }

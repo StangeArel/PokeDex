@@ -6,10 +6,6 @@ let pokemonDataList = [];
 let currentIndex;
 let currentPokemonDataList = [];
 
-/* const pokeApiTypesUrl = "https://pokeapi.co/api/v2/type";
-let typesData = [];  */
-
-
 const colours = {
     normal: 'rgba(168, 167, 122, 0.6)',
     fire: 'rgba(238, 129, 48, 0.6)',
@@ -30,4 +26,3 @@ const colours = {
     steel: 'rgba(183, 183, 206, 0.6)',
     fairy: 'rgba(214, 133, 173, 0.6)',
 };
-

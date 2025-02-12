@@ -51,7 +51,7 @@ function generateTemplatesTypes(onePokemon) {
     let template = ``;
     for (let index = 0; index < onePokemon.types.length; index++) {
         const typeName = onePokemon.types[index].type.name;
-        template += `<img class="typeImg" src="../assets/img/typeImgs/${typeName}.svg">`;
+        template += `<img class="typeImg" src="./assets/img/typeImgs/${typeName}.svg">`;
     }
     return template;
 }

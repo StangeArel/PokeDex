@@ -1,13 +1,28 @@
+/**
+ * Stores the instance of the chart.
+ * This variable is used to keep track of the existing chart instance
+ * to prevent creating multiple charts and to allow updates or removal of the current chart.
+ *
+ * @type {Object|null}
+ */
 let myChartInstance = null;
 
+/**
+ * Displays a horizontal bar chart representing the stats of a selected Pokémon.
+ * The chart is created using Chart.js and updates dynamically based on the selected Pokémon.
+ *
+ * @param {number} i - The index of the Pokémon in `currentPokemonDataList` whose stats should be displayed.
+ */
 function showStatsChart(i) {
     const canvas = document.getElementById('myChart');
     const ctx = canvas.getContext('2d');
 
+    // Destroy the existing chart instance if it exists to prevent duplication
     if (myChartInstance) {
         myChartInstance.destroy();
     }
 
+    // Create a new Chart.js instance
     myChartInstance = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -48,7 +63,7 @@ function showStatsChart(i) {
         },
         options: {
             maintainAspectRatio: false,  
-            indexAxis: 'y',
+            indexAxis: 'y', // Display as a horizontal bar chart
             layout: {
                 padding: 20
             },

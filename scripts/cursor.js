@@ -1,3 +1,9 @@
+/**
+ * Listens for mouse movement and creates a spark effect at the cursor position.
+ * A small visual element (spark) is generated and removed after a short duration.
+ *
+ * @param {MouseEvent} event - The mouse event containing cursor coordinates.
+ */
 document.addEventListener("mousemove", handleMouseMove);
 
 function handleMouseMove(event) {

@@ -8,18 +8,19 @@
     <link rel="apple-touch-icon" href="./assets/Favicon/pokeball.png">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/impressum.css">
     <title>PokéDex</title>
 </head>
 
 <body onload="fetchPokemonsList()" onclick="hideSearchInput()">
     <div class="contentContainer">
         <div class="header">
-            <h1 class="pokedexTitleHeaderFooter">PokéDex</h1>
+            <h1 class="pokedexTitleHeader">PokéDex</h1>
         </div>
         <div class="main">
             <div class="containerForSearch" onclick="stopPropation(event)">
-                <input oninput="searchPokemoninList()" type="search" class="pokemonSearch hidden" id="pokemonSearch" name="q"
-                    placeholder="Pokémon suchen..." />
+                <input oninput="searchPokemoninList()" type="search" class="pokemonSearch hidden" id="pokemonSearch"
+                    name="q" placeholder="Pokémon suchen..." />
                 <button class="btnPokemonSearchBtn" onclick="toggleSearch(event)">
                     <img class="pokemonSearchBtn" src="./assets/img/searchForPokemon.png" alt="Img. Pokemon search">
                 </button>
@@ -28,7 +29,12 @@
             <button class="btnCheckAbilities loadMoreBtn" onclick="loadMore()">Load more</button>
         </div>
         <div class="footer">
-            <h1 class="pokedexTitleHeaderFooter">PokéDex</h1>
+            <h1 class="pokedexTitleFooter">PokéDex</h1><br>
+            <div class="impressumContainer">
+                <a class="startseite" href="./index.html">Startseite</a>
+                <div class="Borderline"></div>
+                <a class="impressum" href="./impressum.html">Impressum</a>
+            </div>
         </div>
     </div>
     <div id="abilityOverlay" class="overlay d_none" onclick="toggleAbilityOverlay()"></div>
